@@ -1,0 +1,21 @@
+#Creating executatble JAR
+# For Eclipe/STS IDE
+# Navigage to <%PROJECT_HOME%>\bin
+jar cfe employee-mgmt-app.jar com.examples.java.empapp.EmployeeManagementApp .
+mv employee-mgmt-app.jar ../
+
+# For Intellij IDE
+# Navigage to <%PROJECT_HOME%>\out\production\employee-mgmt-app
+jar cfe employee-mgmt-app.jar com.examples.java.empapp.EmployeeManagementApp .
+mv employee-mgmt-app.jar ../../../
+
+	
+#Running Employee Management App from Command Line
+java -jar employee-mgmt-app.jar
+
+#Running Employee Management App with MySQL connectivity from Command Line
+java -cp employee-mgmt-app-jdbc.jar;lib\mysql-connector-j-8.0.31.jar com.examples.java.empapp.EmployeeManagementApp
+java -cp employee-mgmt-app-jdbc.jar;lib\* com.examples.java.empapp.EmployeeManagementApp
+java -cp *;lib\* com.examples.java.empapp.EmployeeManagementApp
+
+java -cp *;lib\* -Xms512M -Xmx2G -XX:+UseG1GC com.examples.java.empapp.EmployeeManagementApp

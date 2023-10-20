@@ -1,0 +1,48 @@
+= Employee Service API Documentation
+:toc:
+:toclevels: 2
+
+== Introduction
+This documentation shows how to use Employee Service API
+
+
+== Create Employee
+This section show how to create Employee
+
+=== CURL Reponse
+include::{snippets}/emp-create/curl-request.adoc[]
+
+=== HTTP Request
+include::{snippets}/emp-create/http-request.adoc[]
+
+=== Request Body
+include::{snippets}/emp-create/request-body.adoc[]
+
+=== Request Fields
+include::{snippets}/emp-create/request-fields.adoc[]
+
+=== HTTP Reponse
+include::{snippets}/emp-create/http-response.adoc[]
+
+=== Response Body
+include::{snippets}/emp-create/response-body.adoc[]
+
+=== Response Fields
+include::{snippets}/emp-create/response-fields.adoc[]
+
+== List Employees
+This section shows how to list Employees
+
+.curl
+include::{snippets}/emp-list/curl-request.adoc[]
+
+.request
+include::{snippets}/emp-list/http-request.adoc[]
+
+.response
+include::{snippets}/emp-list/http-response.adoc[]
+
+.body
+include::{snippets}/emp-list/response-body.adoc[]
+
+Thank You :)

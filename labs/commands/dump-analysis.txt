@@ -1,0 +1,22 @@
+#List Java process
+jps
+
+#Get Heap Dump using jmap
+jmap --dump:<dump-options> <pid>
+jmap -dump:live,format=b,file=heap.bin <pid>
+
+#Create Heap Dump using HPROF agent
+-agentlib:hprof=heap=dump,format=b
+
+#Get Thread Dump using jstack
+jstack -f <pid>
+
+#Analyse Heap Dump
+jhat heap.bin
+[Open browser -> http://localhost:7000]
+
+#Windows
+visualvm --openfile (dumpfile)
+
+#Mac
+/Applications/VisualVM.app/Contents/MacOS/visualvm --openfile (dumpfile)

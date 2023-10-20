@@ -1,0 +1,96 @@
+##Print GC Details
+-XX:+PrintGCDetails
+java -XX:+PrintGCDetails <class-name>
+
+##JVM Process Status
+#jps		-> JVM Process Status Tool - Lists instrumented HotSpot Java virtual machines on a target system
+jps
+
+#Sample Output
+10048 Jps
+17192
+9900 Finalizable
+
+##Java Memory & GC Statistics
+#jstat		-> JVM Statistics Monitoring Tool - Attaches to an instrumented HotSpot Java virtual machine and collects and logs performance statistics
+
+jstat –gc <JAVA_PID>
+
+#Sample Output
+ S0C    S1C    S0U    S1U      EC       EU        OC         OU       MC     MU    CCSC   CCSU   YGC
+230400.0 230400.0 230400.0  0.0   230400.0 161280.6  319488.0   139029.5  4864.0 2866.3 512.0  294.4
+
+S0C		Current survivor space 0 capacity (KB)
+S1C		Current survivor space 1 capacity (KB)
+S0U		Survivor space 0 utilization (KB)
+S1U		Survivor space 1 utilization (KB)
+EC		Current eden space capacity (KB)
+EU		Eden space utilization (KB)
+OC		Current old space capacity (KB)
+OU		Old space utilization (KB)
+MC		Metasapce capacity (KB)
+MU		Metaspace utilization (KB)
+CCSC	Compressed class space capacity (KB)
+CCSU	Compressed class space used (KB)
+YGC		Number of young generation garbage collection events
+YGCT	Young generation garbage collection time
+FGC		Number of full GC events
+FGCT	Full garbage collection time
+GCT		Total garbage collection time
+
+
+##JVM Memory Statistics
+#jmap		-> prints shared object memory maps or heap memory details of a given process
+
+jmap -heap <JAVA_PID>
+
+#Sample Output
+######################################################
+Attaching to process ID 9900, please wait...
+Debugger attached successfully.
+Server compiler detected.
+JVM version is 25.241-b07
+
+using thread-local object allocation.
+Parallel GC with 4 thread(s)
+
+Heap Configuration:
+   MinHeapFreeRatio         = 0
+   MaxHeapFreeRatio         = 100
+   MaxHeapSize              = 2124414976 (202
+   NewSize                  = 44564480 (42.5M
+   MaxNewSize               = 707788800 (675.
+   OldSize                  = 89653248 (85.5M
+   NewRatio                 = 2
+   SurvivorRatio            = 8
+   MetaspaceSize            = 21807104 (20.79
+   CompressedClassSpaceSize = 1073741824 (102
+   MaxMetaspaceSize         = 17592186044415
+   G1HeapRegionSize         = 0 (0.0MB)
+
+Heap Usage:
+PS Young Generation
+Eden Space:
+   capacity = 235929600 (225.0MB)
+   used     = 235929600 (225.0MB)
+   free     = 0 (0.0MB)
+   100.0% used
+From Space:
+   capacity = 235929600 (225.0MB)
+   used     = 235929600 (225.0MB)
+   free     = 0 (0.0MB)
+   100.0% used
+To Space:
+   capacity = 235929600 (225.0MB)
+   used     = 73236480 (69.84375MB)
+   free     = 162693120 (155.15625MB)
+   31.041666666666668% used
+PS Old Generation
+   capacity = 424673280 (405.0MB)
+   used     = 245077992 (233.7245864868164MB)
+   free     = 179595288 (171.2754135131836MB)
+   57.70977444118924% used
+
+748 interned Strings occupying 51704 bytes.
+##############################################
+
